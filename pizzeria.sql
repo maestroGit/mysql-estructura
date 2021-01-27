@@ -1,0 +1,10 @@
+CREATE DATABASE pizzeria;
+USE pizzeria;
+CREATE TABLE provincia (id_provincia INT(11) NOT NULL AUTO_INCREMENT, nombre VARCHAR(25) NOT NULL, PRIMARY KEY(id_provincia));
+CREATE TABLE poblacion (id_poblacion INT(11) AUTO_INCREMENT, nombre VARCHAR(25) NOT NULL, PRIMARY KEY(id_poblacion));
+CREATE TABLE cliente (id_cliente INT(11) NOT NULL AUTO_INCREMENT, nombre VARCHAR(25) NOT NULL, PRIMARY KEY(id_cliente));
+CREATE TABLE tienda (id_tienda INT(11) NOT NULL AUTO_INCREMENT, direccion VARCHAR(25) NOT NULL, cod_postal INT(11), PRIMARY KEY(id_tienda));
+CREATE TABLE empleado (id_empleado INT(11) NOT NULL AUTO_INCREMENT, nombre VARCHAR(25) NOT NULL, apellido1 VARCHAR(25) NOT NULL,apellido2 VARCHAR(25) NOT NULL, nif INT(11), telefono INT(11), tipo VARCHAR(25) NOT NULL, PRIMARY KEY (id_empleado));
+CREATE TABLE pedido (id_pedido INT(11) NOT NULL AUTO_INCREMENT, fecha DATETIME, id_repartidor INT(11) NOT NULL, fecha_entrega DATETIME, precio_total FLOAT(11), tipo VARCHAR(25), id_cliente INT(11), id_tienda INT(11), PRIMARY KEY (id_pedido));
+CREATE TABLE producto (id_producto INT(11) NOT NULL AUTO_INCREMENT, nombre VARCHAR(25) NOT NULL, descripcion VARCHAR(25), precio FLOAT, PRIMARY KEY (id_producto));
+CREATE TABLE categoria (id_categoria INT(11) NOT NULL AUTO_INCREMENT, nombre VARCHAR(25) NOT NULL, PRIMARY KEY(id_categoria));
