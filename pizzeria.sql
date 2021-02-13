@@ -17,3 +17,4 @@ INSERT INTO empleado (id_empleado, nombre, apellido1, apellido2, nif, telefono, 
 INSERT INTO producto ( id_producto,  nombre,  descripcion,  precio) VALUES ( 1,  'margarita',  'piza de tomate y queso',  10.2), ( 2,  'big-burguer',  'hamburguesa doble', 9.5), ( 3,  'barbacoa',  'piza de carne',  11.3);
 INSERT INTO categoria (id_categoria, nombre, id_producto) VALUES (1, 'Masa fina', 1),(2, 'bocadillo', 2), (3, 'Masa gruesa', 3);
 INSERT INTO tienda (id_tienda, direccion, cod_postal, id_poblacion ) VALUES (1, 'Rogent, 24', 08026, 1);
+INSERT INTO pedido (id_pedido, fecha, id_repartidor, fecha_entrega, id_producto, precio_total, tipo, id_cliente, id_tienda) VALUES (1, '2020-02-01 18:18:10', 1, '2020-02-01 18:59:10', 1, 20.40, 'pizzas', 1, 1);
