@@ -38,12 +38,19 @@ SELECT nombre, precio FROM producto ORDER BY precio ASC LIMIT 1;
 -- 19 Llista el nom i el preu del producto més car. (Utilitzi solament les clàusules ORDER BY i LIMIT). NOTA: Aquí no podria usar MAX(preu), necessitaria GROUP BY.
 SELECT nombre, precio ROM producto ORDER BY precio DESC LIMIT 1;
 -- 20 Llista el nom de tots els productos del fabricant el codi de fabricant del qual és igual a 2.
+SELECT nombre FROM producto WHERE codigo_fabricante = 2;
 -- 21 Retorna una llista amb el nom del producte, preu i nom de fabricant de tots els productes de la base de dades.
+SELECT  producto.nombre, producto.precio, fabricante.nombre AS fabricante FROM producto , fabricante WHERE fabricante.codigo = producto.codigo_fabricante;
 -- 22 Retorna una llista amb el nom del producte, preu i nom de fabricant de tots els productes de la base de dades. Ordeni el resultat pel nom del fabricador, per ordre alfabètic.
+SELECT  producto.nombre, producto.precio, fabricante.nombre AS fabricante FROM producto , fabricante WHERE fabricante.codigo = producto.codigo_fabricante ORDER BY fabricante.nombre;
 -- 23 Retorna una llista amb el codi del producte, nom del producte, codi del fabricador i nom del fabricador, de tots els productes de la base de dades.
+SELECT producto.codigo, producto.nombre, producto.codigo_fabricante, fabricante.nombre FROM producto, fabricante;
 -- 24 Retorna el nom del producte, el seu preu i el nom del seu fabricant, del producte més barat.
+SELECT producto.nombre, MIN(producto.precio), fabricante.nombre FROM producto, fabricante WHERE fabricante.codigo = producto.codigo_fabricante;
 -- 25 Retorna el nom del producte, el seu preu i el nom del seu fabricant, del producte més car.
+SELECT producto.nombre, MAX(producto.precio), fabricante.nombre FROM producto, fabricante WHERE fabricante.codigo = producto.codigo_fabricante;
 -- 26 Retorna una llista de tots els productes del fabricador Lenovo.
+SELECT * FROM producto, fabricante WHERE fabricante.nombre='Lenovo';
 -- 27 Retorna una llista de tots els productes del fabricant Crucial que tinguin un preu major que 200€.
 -- 28 Retorna un llistat amb tots els productes dels fabricants Asus, Hewlett-Packardy Seagate. Sense utilitzar l'operador IN.
 -- 29 Retorna un llistat amb tots els productes dels fabricants Asus, Hewlett-Packardy Seagate. Utilitzant l'operador IN.
