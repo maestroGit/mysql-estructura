@@ -52,6 +52,7 @@ SELECT producto.nombre, MAX(producto.precio), fabricante.nombre FROM producto, f
 -- 26 Retorna una llista de tots els productes del fabricador Lenovo.
 SELECT * FROM producto, fabricante WHERE fabricante.nombre='Lenovo';
 -- 27 Retorna una llista de tots els productes del fabricant Crucial que tinguin un preu major que 200€.
+SELECT * FROM producto, fabricante WHERE fabricante.nombre='Crucial' AND precio>200;
 -- 28 Retorna un llistat amb tots els productes dels fabricants Asus, Hewlett-Packardy Seagate. Sense utilitzar l'operador IN.
 -- 29 Retorna un llistat amb tots els productes dels fabricants Asus, Hewlett-Packardy Seagate. Utilitzant l'operador IN.
 -- 30 Retorna un llistat amb el nom i el preu de tots els productes dels fabricants el nom dels quals acabi per la vocal e.
@@ -63,6 +64,7 @@ SELECT * FROM producto, fabricante WHERE fabricante.nombre='Lenovo';
 -- 36 Retorna tots els productes del fabricador Lenovo. (Sense utilitzar INNER JOIN).
 -- 37 Retorna totes les dades dels productes que tenen el mateix preu que el producte més car del fabricador Lenovo. (Sense utilitzar INNER JOIN).
 -- 38 Llista el nom del producte més car del fabricador Lenovo.
+SELECT producto.nombre, MAX(producto.precio) FROM producto, fabricante WHERE fabricante.nombre='Lenovo';
 -- 39 Llista el nom del producte més barat del fabricant Hewlett-Packard.
 -- 40 Retorna tots els productes de la base de dades que tenen un preu major o igual al producte més car del fabricador Lenovo.
 -- 41 Llesta tots els productes del fabricador Asus que tenen un preu superior al preu mitjà de tots els seus productes.
